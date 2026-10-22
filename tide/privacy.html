@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tide Privacy Policy</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<nav><a href="../">All apps</a></nav>
+<h1>Tide Privacy Policy</h1>
+<p class="meta"><strong>App:</strong> Tide (<code>com.sat.tidetorrent</code>) &middot; <strong>Developer:</strong> sgateori &middot; <strong>Last updated:</strong> 2026-10-22</p>
+
+<p>Tide is a BitTorrent client for Android. It has no accounts, shows no ads and has no server of its own. It has no search or index of content. This page says what stays on your device and what leaves it.</p>
+
+<h2>What stays on your device</h2>
+<p>Your torrent list, resume data, settings and downloaded files are stored on your device. By default downloads go to the app's own storage. Other folders are reached only through Android's system file picker, and only for the choices you make (adding a .torrent file, choosing a folder, exporting a copy). Android's cloud backup and device transfer copy Tide's settings only, never the torrent list, resume data or downloads. Uninstalling Tide deletes what it stored in its own storage; files you exported or saved to a shared folder stay where you put them.</p>
+
+<h2>BitTorrent connections</h2>
+<p>Tide connects to other computers only to transfer the torrents you add. This traffic goes directly from your phone and never through us.</p>
+<ul>
+<li><strong>Peers.</strong> Downloading or sharing a torrent means connecting to other people's devices in that torrent's swarm. They see your IP address and port, as with any BitTorrent client. Tide cannot hide your IP address.</li>
+<li><strong>Trackers.</strong> A torrent or magnet link may name tracker servers. Tide tells them the torrent's info-hash, your IP address and port, and how much you have transferred.</li>
+<li><strong>DHT and Local Peer Discovery.</strong> Both are on by default and can be switched off in Settings. DHT takes part in the public BitTorrent network; Local Peer Discovery announces the torrents you share to devices on your local network.</li>
+</ul>
+<p>Wi-Fi only and VPN only are off by default. VPN only is not a VPN: Tide does not create one. When it is on, Tide uses only an active VPN network and pauses transfers if there is none. It does not make you anonymous. Many peers and trackers use plain, unencrypted protocols, so Tide allows cleartext connections.</p>
+<!-- OPEN: BitTorrent peer/tracker traffic (sheet open point 6). Current stance is that this is user-initiated, core-function transfer directly to third parties and is not declared as developer collection or sharing; owner still to confirm against Play's wording. This section is the main disclosure. -->
+
+<h2>Crash reports and anonymous usage (Firebase)</h2>
+<p>To fix crashes and see which features matter, Tide uses Google Firebase Crashlytics and Firebase Analytics. Google acts as our processor. This is <strong>on by default</strong>, starts when you first open a release build, and you can turn it off at any time with one switch: <em>Settings &gt; Privacy &gt; Send crash reports and usage statistics</em>. The switch controls both services. It is always off in debug builds.</p>
+<!-- OPEN: Default-on collection (sheet open point 1). The code starts both SDKs at first launch before the user can see the switch; no first-run prompt exists. Wording states "on by default" openly (sheet option i). Owner may change the app to default-off or add a prompt, or answer "required" in Data safety; if so, rewrite this section to match. EEA/UK consent law is not decided by this page. -->
+<p>What Tide itself sends:</p>
+<table>
+<tr><th>Data</th><th>Purpose</th></tr>
+<tr><td>Crash reports: stack traces of crashes, and for handled problems the exception class and stack frames only (the message is dropped), for example engine start failures, torrent or file errors (the error code only), lost folder permission, or stalled transfers</td><td>Find and fix bugs</td></tr>
+<tr><td>State attached to crash reports: build type, whether installed from Google Play or sideloaded, language, low-memory device, battery saver on, connection type (Wi-Fi, mobile, VPN or none; never the network name), the libtorrent version, the screen open, exact counts of torrents and of active torrents, the kind of download location (internal, app folder or custom; never which folder), and whether Wi-Fi only and VPN only are on</td><td>Reproduce crashes</td></tr>
+<tr><td>Usage events: torrent added (from a magnet or a file, and the kind of storage), completed (size range, duration range, storage kind), removed, rechecked or re-announced; engine failed; a setting switched on or off (Wi-Fi only, VPN only, DHT, LSD, start paused, sequential, crash reports, analytics); a stall detected (no peers, disk, file system or network, with a duration range); a transfer blocked by VPN only; a storage error (space, permission, folder access or SD card); periodic session statistics as ranges (active torrents and peers); and which type of screen was opened (for example "detail", never which torrent)</td><td>See what works and what fails</td></tr>
+</table>
+<p>Tide does not deliberately send torrent names, magnet links, info-hashes, tracker addresses, peer addresses, file names, file or folder paths, rate limits or search text (Tide has no search). Note that Crashlytics receives exact torrent counts, and the session statistics include ranges of peer counts.</p>
+<p>The Firebase libraries also collect some standard data on their own: device model, operating system and app version, language, general events such as first open and sessions, and random per-install identifiers (the Firebase app-instance ID and the Crashlytics installation ID). Google derives an approximate location (country or city level) from your IP address when the data arrives. Tide itself never reads your location and has no location permission. These identifiers are not your advertising ID. Tide does not use the advertising ID, and its advertising-related permissions are removed from the app.</p>
+<!-- OPEN: Approximate location via Analytics IP (sheet open point 4). Policy keeps the sentence disclosing IP-derived approximate location; whether the Play Data safety form should tick Location > Approximate location is an open owner decision (ticking is the safer error). -->
+<p><strong>Limit:</strong> if the app crashes with an unexpected error, the error text written by the system or a library is sent as it is, and native (libtorrent) crashes carry native stack frames and addresses. In rare cases such text could include part of a path or a name. We filter what the app itself reports, but we cannot filter text produced inside the crash.</p>
+<!-- OPEN: Uncaught crash text is not redacted (sheet open point 3). Wording says "does not deliberately send" with this stated exception; narrow it if a redaction step is added later. -->
+<p>Data is encrypted in transit. It is kept by Firebase under Google's default retention. See <a href="https://firebase.google.com/support/privacy">Firebase privacy information</a> and the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>
+
+<h2>What we do not collect</h2>
+<p>We do not receive your torrent list, downloaded files, file names, location from your device, contacts, messages, photos, accounts or any personal information, and we run no server that stores them. We do not sell data and do not use it for advertising.</p>
+
+<h2>Permissions</h2>
+<p>Internet, network state and Wi-Fi state (BitTorrent transfers; Wi-Fi only and VPN only); local network access on Android 17 and later (finding peers on your local network); foreground service of type data sync and wake lock (keep transfers running with a visible notification while the screen is off); notifications (transfer progress and pause reasons; transfers work if you decline). The Google Play version does not request all-files storage access. No location, contacts, camera, microphone or advertising ID access.</p>
+
+<h2>Your choices and deleting data</h2>
+<p>Use the switch above to stop crash and usage collection at any time. You can also turn off DHT and Local Peer Discovery in Settings. We have no account system, so we cannot look up your data by name. To ask us to delete reports from your install, email us the installation identifier or a description of when the crash happened, and we will delete what we can match. Uninstalling removes all local data.</p>
+<!-- OPEN: Deletion request (sheet section 1 / open point 9). The sheet's answer is "Yes, by email to sgateori@proton.me"; owner to confirm, and keep the Play Data safety answer worded identically. -->
+
+<h2>Children</h2>
+<p>Tide is a general-purpose tool and is not directed at children.</p>
+
+<h2>Changes</h2>
+<p>If this changes, the date above changes and the app update notes will say so.</p>
+
+<h2>Contact</h2>
+<p>sgateori@proton.me</p>
+</body>
+</html>

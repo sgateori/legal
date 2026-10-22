@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bastion Privacy Policy</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<nav><a href="../">All apps</a></nav>
+<h1>Bastion Privacy Policy</h1>
+<p class="meta"><strong>App:</strong> Bastion (<code>sh.bastion.app</code>) &middot; <strong>Developer:</strong> sgateori &middot; <strong>Last updated:</strong> 2026-10-22</p>
+
+<p>Bastion is a remote-access and terminal app. It connects to servers you choose (SSH, Mosh, VNC, RDP and others), can run Linux guests on your phone, and has an optional local endpoint that lets an AI agent you pair with control the app. It has no accounts, shows no ads and sells no data. This page says what is stored on your device and what leaves it.</p>
+
+<h2>What stays on your device</h2>
+<p>Connection profiles (host names, ports, user names, labels and options), known-host fingerprints, settings, the on-device log of agent calls (arguments redacted) and the rclone configuration are stored in the app's private storage. We cannot see them. They are excluded from Android backups and device transfers, and uninstalling the app deletes them.</p>
+<p>Passwords, key passphrases and TOTP secrets are encrypted with AES-256-GCM using a key held in the Android Keystore. Private SSH keys and tunnel configuration text are encrypted with a separate Keystore key. The connection profile database itself, the known-host list, the settings and the rclone configuration file are <strong>not</strong> encrypted by the app and are protected only by Android's app sandbox. rclone obscures passwords in its configuration (this is reversible) and keeps cloud-provider sign-in tokens as plain text in that private file.</p>
+<p>You can lock the app with biometrics or your device credential and turn on screen-capture protection. Backups are made only when you ask: an encrypted file that you save where you choose, or an automatic push to a remote you configured. Nothing is sent to us.</p>
+
+<h2>Where your connections go</h2>
+<p>Bastion connects to the servers, mail accounts, cloud providers and tunnel services you set up (for example SSH, VNC, RDP, SMB, SFTP, Proton or IMAP/SMTP mail, rclone cloud storage, Tailscale, NetBird, WireGuard and Cloudflare Access). This traffic goes directly between your phone and those hosts, never through us. Android's HTTP stack refuses cleartext traffic except to the phone itself (127.0.0.1 and localhost); that rule does not cover the native libraries or SSH sockets. If you use Cloudflare Access, an in-app sign-in page captures your Cloudflare Access cookie for that connection.</p>
+
+<h2>Downloads from third parties</h2>
+<p>When you take these actions, your phone connects to the following hosts, which can see your IP address. None of them is a service run by us.</p>
+<ul>
+<li><strong>Linux guests:</strong> when you install a distribution, Bastion downloads its root file system from <code>github.com</code> (proot-distro releases), <code>dl-cdn.alpinelinux.org</code> or <code>kali.download</code>. The download addresses are fixed in the app and each file is checked against a pinned SHA-256 hash. Inside a guest, that distribution's package manager then contacts its own mirrors.</li>
+<li><strong>Tails:</strong> only if you import the Tails VM preset, the image is fetched from <code>download.tails.net</code>.</li>
+<li><strong>Terminal fonts:</strong> fonts you pick are fetched from <code>cdn.jsdelivr.net</code> (or from a font address you enter yourself). The local media-stream page also loads a script (hls.js) from jsDelivr into your browser or player.</li>
+<li><strong>Single-packet authorization:</strong> only if you use that feature, <code>api.ipify.org</code> is asked for your public IP address.</li>
+<li><strong>Guest app skin:</strong> one optional skin file can be fetched from <code>archive.org</code>.</li>
+</ul>
+
+<h2>The AI agent endpoint (MCP)</h2>
+<p>This endpoint is <strong>off by default</strong>. When you turn it on, it listens on the phone's loopback address only (a LAN listener is a separate setting that is off by default). A new client must be approved by you before it gets a token, and you can unpair it at any time. Sensitive tools ask for your consent on each call or once per session, and every call is logged on your device.</p>
+<p>Depending on the tool and your consent, an agent you paired can receive things such as a camera frame, a location fix, notification text, files, terminal contents or the clipboard. That data goes to the agent client you chose, not to us. What that client does with it is governed by that client's own terms.</p>
+<p>Some tools are off until you enable them separately (agent file reads and queued terminal input). Optional Shizuku support, if you install and authorize Shizuku, lets the app grant itself permissions and read the device log.</p>
+
+<h2>Crash reports and anonymous usage (Firebase)</h2>
+<p>To fix crashes and see which features matter, Bastion uses Google Firebase Crashlytics and Firebase Analytics. Google acts as our processor. This is <strong>on by default</strong>, starts when you first open a release build, and you can turn it off at any time with one switch: <em>Settings &gt; Security &amp; privacy &gt; Share crash reports and usage statistics</em>. It is always off in debug builds, and the switch controls both services.</p>
+<!-- OPEN: Default-on collection (sheet open point 1). The code starts both SDKs on a fresh install before the user can see the switch; no first-run prompt exists. Wording here states "on by default" openly (sheet option i). Owner may instead change the app to default-off or add a prompt (option ii/iii); if so, rewrite this section and the Data safety "optional/required" answer to match. EEA/UK consent law is not decided by this page. -->
+<p>What Bastion itself sends:</p>
+<table>
+<tr><th>Data</th><th>Purpose</th></tr>
+<tr><td>Crash reports: stack traces of crashes, and for handled problems the kind of failure and where it happened (for example that a native component failed to load, or that an SSH connection failed for an unclassified reason)</td><td>Find and fix bugs</td></tr>
+<tr><td>Device and app state attached to crash reports: build flavour, whether installed from Google Play or sideloaded, language, first supported CPU type, whether a native library loaded, whether a Linux guest was active, protocol in use, low-memory device, battery saver on, connection type (Wi-Fi, mobile, VPN or none; never the network name), and the name of the screen that was open</td><td>Reproduce crashes</td></tr>
+<tr><td>Usage events: connection attempted (protocol and whether the login used a password, key or other); connection result (protocol, success, error class such as timeout, auth, host key, TLS, DNS or refused, and a duration range); session end (protocol, duration range, and whether you ended it, it dropped or it failed); feature used (SFTP, port forwarding, email, rclone sync or Linux guest); host-key prompt outcome (accepted or rejected); and which agent tool was called with only whether it succeeded</td><td>See what works and what fails</td></tr>
+</table>
+<p>Bastion does not deliberately send host names, ports, user names, key names, passwords, file contents, agent-tool arguments or results, clipboard or terminal contents, network names or IP addresses in these events or in the crash keys. The agent-tool name is sent only when it is one of the app's own registered tools.</p>
+<p>The Firebase libraries also collect some standard data on their own: device model, operating system and app version, general events such as app opens and sessions, random per-install identifiers (the Firebase app-instance ID and the Crashlytics installation ID), and Google derives an approximate country or region from your IP address when the data arrives. These identifiers are not your advertising ID. Bastion does not use the advertising ID and its advertising-ID permission is removed from the app.</p>
+<p><strong>Limit:</strong> Bastion has no crash handler of its own for uncaught crashes, so when the app crashes with an unexpected error, the error text written by the system or a library is sent as it is. Such text can include a host name or user name, for example from a connection failure. Native (signal) crashes are not uploaded; they are only recorded on your device.</p>
+<!-- OPEN: Uncaught crash text is not redacted (sheet open point 2). Wording above says "does not deliberately send" and states the limit. If a redaction step is added in a later build, this limit paragraph can be narrowed. -->
+<p>Data is encrypted in transit. It is kept by Firebase under Google's default retention. See <a href="https://firebase.google.com/support/privacy">Firebase privacy information</a> and the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>
+
+<h2>What we do not collect</h2>
+<p>We do not receive your connection profiles, passwords, keys, files, terminal output, clipboard, camera images, location, notifications, contacts or messages, and we run no server that stores them. Data you send to servers you chose, to cloud providers, or to an agent you paired does not pass through us. We do not sell data and do not use it for advertising.</p>
+
+<h2>Permissions</h2>
+<p>Internet, network state and multicast (connections and local-network discovery); foreground service (keeps connections alive while a notification is showing); notifications (connection and consent notices); wake lock and the battery-optimization exemption request (keep sessions alive with the screen off); biometrics (optional app lock); NFC and USB host (security keys); Bluetooth (Bluetooth and BLE serial consoles); camera and location (declared for the agent tools that capture a camera frame or a location fix, which ask for consent on each call, and location also for Bluetooth scanning on older Android versions); all-files access and legacy storage read (the SFTP file browser and USB drive mounts); install packages (opening the system installer for an APK you download or an agent installs with your consent); and receive boot completed (background work scheduling). Notification access is a separate special permission you grant in system settings, used only to let an agent list notifications. Bastion declares no contacts, SMS, phone or microphone permissions.</p>
+
+<h2>Your choices and deleting data</h2>
+<p>Use the switch above to stop crash and usage collection at any time. Pairing, the agent endpoint and each agent capability can be turned off in Settings. We have no account system, so we cannot look up your data by name. To ask us to delete reports from your install, email us the installation identifier or a description of when the crash happened, and we will delete what we can match. Uninstalling removes all local data.</p>
+<!-- OPEN: Deletion request (sheet section 1 / open point 8). The sheet's proposal is "Yes, by email to sgateori@proton.me", not yet confirmed by the owner. Keep this wording and the Play Data safety deletion answer identical. -->
+
+<h2>Children</h2>
+<p>Bastion is a general-purpose tool and is not directed at children.</p>
+
+<h2>Changes</h2>
+<p>If this changes, the date above changes and the app update notes will say so.</p>
+
+<h2>Contact</h2>
+<p>sgateori@proton.me</p>
+</body>
+</html>

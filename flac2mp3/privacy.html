@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Audio Converter Privacy Policy</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<nav><a href="../">All apps</a></nav>
+<h1>Audio Converter Privacy Policy</h1>
+<p class="meta"><strong>App:</strong> Audio Converter (<code>com.sat.flac2mp3</code>) &middot; <strong>Developer:</strong> sgateori &middot; <strong>Last updated:</strong> 2026-10-22</p>
+
+<p>Audio Converter converts audio files on your phone (for example FLAC, WAV or AIFF to MP3, M4A, FLAC or WAV). It has no accounts, shows no ads and has no server of ours. This page says what leaves your device.</p>
+
+<h2>What stays on your device</h2>
+<p>The audio files you pick, their names, tags, cover art, folder names and paths, and the converted output are handled only on your phone. Conversion happens on the device. You choose input files or a folder with the system file picker; the app declares no storage permission. Output goes to <code>Music/FLAC2MP3</code> or to a folder you choose. Settings may be included in your own Android backup. The local crash log (below) is excluded from cloud backup and device transfer.</p>
+
+<h2>Network connections</h2>
+<p>The app's own code does not open network connections. The Internet permission is used only by the Firebase libraries described next.</p>
+
+<h2>Crash reports and usage statistics (Firebase)</h2>
+<p>The app uses Google Firebase Crashlytics and Firebase Analytics to find crashes and see which features are used. Firebase acts as our service provider and processes this data on our behalf; we do not sell it or use it for advertising.</p>
+<!-- OPEN: "Shared" in the Data safety form: sheet proposes Shared = No (Firebase as service provider); conservative alternative is Shared = Yes (analytics). Owner to choose; wording above must match. -->
+<p><strong>This is on by default.</strong> The app does not ask before it starts: collection begins when you first open the app. You can turn it off at any time with one switch, <em>Share crash reports and usage statistics</em>, in Settings. It covers both services. Collection is never active in debug builds.</p>
+<!-- OPEN: Default ON with no first-run prompt (opt-out). Sheet open point 1: owner may change the app to default-off / first-run prompt, or answer "required" in the form. Keep this paragraph in step with that decision. -->
+<table>
+<tr><th>Data</th><th>Purpose</th></tr>
+<tr><td>Crash reports: stack traces for crashes and for handled conversion failures (decode, encode, file access, free space, permission, out of memory), the name of the step that failed and the error class, plus breadcrumbs such as which screen was open and that you cancelled or started a conversion</td><td>Fix bugs</td></tr>
+<tr><td>Device conditions attached to reports: build type, whether installed from Google Play or sideloaded, language, current screen, low-memory and battery-saver flags, connection type (Wi-Fi, mobile, VPN or none; never the network name), which decoder path was used, input and output format, and a free-space range</td><td>Reproduce problems</td></tr>
+<tr><td>Usage events: conversion started, finished (success or failure, error class, duration and speed ranges) or cancelled; input and output format; file-size and batch-size ranges; which settings you changed and to what option; whether output goes to the default or a chosen folder</td><td>See what works and what fails</td></tr>
+<tr><td>Identifiers and device details Firebase creates or reads: a random app-instance ID and Crashlytics installation ID, device model, Android version and app version. This is not your advertising ID; the app removes the advertising-ID permissions.</td><td>Group crashes, count installs</td></tr>
+</table>
+<p>The code does not send file names, folder names, paths, tags, cover art, audio, or exact sizes and times (ranges only). Input formats are recognised from the file extension against a fixed list, otherwise reported as "other".</p>
+<p><strong>Limit:</strong> if the app crashes with an unexpected error, the error text produced by Android or a library is sent as it is. The app does not filter it, and in rare cases such text could include a file name or path. We therefore say the app does not deliberately send file names or paths, not that it never can.</p>
+<!-- OPEN: Uncaught crash text is not redacted (sheet open point 2). Owner may add redaction in a later build; until then keep "does not deliberately send" wording. -->
+<p>Google also derives an approximate country or region from your IP address when Analytics data arrives. The app never reads your location and has no location permission.</p>
+<!-- OPEN: Approximate location via Analytics IP (sheet open point 4): currently not declared in the Data safety form; if Firebase's Play disclosure guidance lists it, the form and this sentence must be aligned. -->
+<p>See <a href="https://firebase.google.com/support/privacy">Firebase privacy information</a> and the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>. Data is encrypted in transit.</p>
+
+<h2>Local crash log and email report</h2>
+<p>The app writes a crash log file (stack trace, device model, Android version, thread name) to its private storage. It leaves your phone only if you tap <em>Email report</em>, which opens your own mail app addressed to sgateori@proton.me; you can review and edit the message before sending.</p>
+
+<h2>What we do not collect</h2>
+<p>Your advertising ID, location, contacts, audio, files, file names or paths (see the limit above), account or personal information. We have no accounts or sign-in.</p>
+
+<h2>Permissions</h2>
+<p>Internet and network state (used by Firebase only); notifications (conversion progress and completion; conversion works if you decline); foreground service of type data sync (keeps a batch you started running with the screen off). Android may stop a data-sync service after about 6 hours in a day; the app then cancels the batch and stops. No storage, location, contacts, camera, microphone or all-files access.</p>
+
+<h2>Your choices and deletion</h2>
+<p>Use the Settings switch to stop collection at any time. Uninstalling removes local data. We have no account system, so we cannot look up data by name. To ask us to delete reports from your install, email us the Firebase installation identifier or a description of when a crash happened, and we will delete what we can match.</p>
+<!-- OPEN: Deletion request offered "by email" is the sheet's proposal (Data safety: "Proposed: Yes"), not yet confirmed by the owner. Older DATA-SAFETY-NOTES said "not offered". Policy and form must say the same. -->
+
+<h2>Children</h2>
+<p>Audio Converter is not directed at children.</p>
+
+<h2>Changes</h2>
+<p>If this policy changes, the date above changes and the new version replaces this page.</p>
+
+<h2>Contact</h2>
+<p>sgateori@proton.me</p>
+</body>
+</html>
