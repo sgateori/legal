@@ -14,9 +14,8 @@
 <p>Simple Music is an offline music player for the audio files on your phone and microSD card. It has no accounts, shows no ads and has no server of ours. Playback and your library never use the network.</p>
 
 <h2>What stays on your device</h2>
-<p>The app reads your audio through Android's media library (title, artist, album, duration, file name, path and album ID) on internal storage and the microSD card, embedded cover art, <code>.lrc</code> lyric files next to tracks, and <code>.m3u</code> playlists. It can also read a folder you pick with the system picker. If you switch on the optional folder artwork setting, it also looks for cover images such as <code>cover.jpg</code>, which needs the photos permission, asked only when you turn that setting on. All of this stays on your phone. None of it is sent to the developer, Google or anyone else. Playlists and settings are stored locally.</p>
-<p>The app allows Android's own app backup, so your settings and local playlists can be included in your own Android or Google backup. That is your device backup, not something the developer receives.</p>
-<!-- OPEN: Android backup (sheet open point 7): allowBackup=true with no exclusion rules; stance "user's own device backup, not declared as collection" is unconfirmed. Owner may add exclusion rules in a later build; update this paragraph if so. -->
+<p>The app reads your audio through Android's media library (title, artist, album, duration, file name, path and album ID) on internal storage and the microSD card, embedded cover art, <code>.lrc</code> lyric files next to tracks, and <code>.m3u</code> playlists. It can also read a folder you pick with the system picker. All of this stays on your phone. None of it is sent to the developer, Google or anyone else. Playlists and settings are stored locally.</p>
+<p>The app opts out of Android's app backup and device-to-device transfer, so your settings and local playlists are not copied to Google's backup or to a new phone.</p>
 
 <h2>Crash reports and usage statistics (Firebase)</h2>
 <p>The only network use is Google Firebase Crashlytics and Firebase Analytics. Firebase acts as our service provider and processes this data on our behalf; we do not sell it or use it for advertising.</p>
@@ -38,8 +37,7 @@
 <p>Your advertising ID, location, contacts, your music files or their details, account or personal information.</p>
 
 <h2>Permissions</h2>
-<p>Audio access (find and play your local music; Android 13+ audio permission, or storage read permission on Android 12 and older); photos access, only if you turn on folder artwork; internet and network state (Firebase only); notifications (the playback notification; playback works if you decline); foreground service for media playback and wake lock (keep playing with the screen off). No all-files, location, contacts, camera or microphone access. Other apps and devices on the same phone, such as headsets and Android Auto, can see the list of your local tracks through the media session so they can control playback.</p>
-<!-- OPEN: READ_MEDIA_IMAGES is declared for the optional folder-artwork setting; sheet says owner must decide whether to keep it because Play restricts it (permissions section). If dropped, remove the photos sentences above. -->
+<p>Audio access (find and play your local music; Android 13+ audio permission, or storage read permission on Android 12 and older); internet and network state (Firebase only); notifications (the playback notification; playback works if you decline); foreground service for media playback and wake lock (keep playing with the screen off). No all-files, location, contacts, camera or microphone access. Other apps and devices on the same phone, such as headsets and Android Auto, can see the list of your local tracks through the media session so they can control playback.</p>
 
 <h2>Your choices and deletion</h2>
 <p>Turn the Settings switch off at any time. Uninstalling removes local data. Data in Firebase is tied to a random installation ID, not to your identity, so we can only locate it if you send us that ID. To ask us to delete data tied to your installation, email us the ID and we will delete what we can match.</p>
