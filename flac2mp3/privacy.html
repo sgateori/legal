@@ -21,8 +21,7 @@
 
 <h2>Crash reports and usage statistics (Firebase)</h2>
 <p>The app uses Google Firebase Crashlytics and Firebase Analytics to find crashes and see which features are used. Firebase acts as our service provider and processes this data on our behalf; we do not sell it or use it for advertising.</p>
-<p><strong>This is on by default.</strong> The app does not ask before it starts: collection begins when you first open the app. You can turn it off at any time with one switch, <em>Share crash reports and usage statistics</em>, in Settings. It covers both services. Collection is never active in debug builds.</p>
-<!-- OPEN: Default ON with no first-run prompt (opt-out). Sheet open point 1: owner may change the app to default-off / first-run prompt, or answer "required" in the form. Keep this paragraph in step with that decision. -->
+<p><strong>This is off by default.</strong> The first time you open the app it asks once, with two equal buttons, <em>Share</em> and <em>No thanks</em>. Nothing is collected until you choose Share. You can change your choice at any time with one switch, <em>Share crash reports and usage statistics</em>, in Settings. It covers both services. Collection is never active in debug builds.</p>
 <table>
 <tr><th>Data</th><th>Purpose</th></tr>
 <tr><td>Crash reports: stack traces for crashes and for handled conversion failures (decode, encode, file access, free space, permission, out of memory), the name of the step that failed and the error class, plus breadcrumbs such as which screen was open and that you cancelled or started a conversion</td><td>Fix bugs</td></tr>

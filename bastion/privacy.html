@@ -37,8 +37,7 @@
 <p>Some tools are off until you enable them separately (agent file reads and queued terminal input). Optional Shizuku support, if you install and authorize Shizuku, lets the app grant itself permissions and read the device log.</p>
 
 <h2>Crash reports and anonymous usage (Firebase)</h2>
-<p>To fix crashes and see which features matter, Bastion uses Google Firebase Crashlytics and Firebase Analytics. Google acts as our processor. This is <strong>on by default</strong>, starts when you first open a release build, and you can turn it off at any time with one switch: <em>Settings &gt; Security &amp; privacy &gt; Share crash reports and usage statistics</em>. It is always off in debug builds, and the switch controls both services.</p>
-<!-- OPEN: Default-on collection (sheet open point 1). The code starts both SDKs on a fresh install before the user can see the switch; no first-run prompt exists. Wording here states "on by default" openly (sheet option i). Owner may instead change the app to default-off or add a prompt (option ii/iii); if so, rewrite this section and the Data safety "optional/required" answer to match. EEA/UK consent law is not decided by this page. -->
+<p>To fix crashes and see which features matter, Bastion uses Google Firebase Crashlytics and Firebase Analytics. Google acts as our processor. This is <strong>off by default</strong>. The first time you open a release build it asks once, with two equal buttons, <em>Share</em> and <em>No thanks</em>, and nothing is collected until you choose Share. You can change your choice at any time with one switch: <em>Settings &gt; Security &amp; privacy &gt; Share crash reports and usage statistics</em>. It is always off in debug builds, and the switch controls both services.</p>
 <p>What Bastion itself sends:</p>
 <table>
 <tr><th>Data</th><th>Purpose</th></tr>
