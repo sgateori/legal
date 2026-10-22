@@ -24,7 +24,6 @@
 <li><strong>DHT and Local Peer Discovery.</strong> Both are on by default and can be switched off in Settings. DHT takes part in the public BitTorrent network; Local Peer Discovery announces the torrents you share to devices on your local network.</li>
 </ul>
 <p>Wi-Fi only and VPN only are off by default. VPN only is not a VPN: Tide does not create one. When it is on, Tide uses only an active VPN network and pauses transfers if there is none. It does not make you anonymous. Many peers and trackers use plain, unencrypted protocols, so Tide allows cleartext connections.</p>
-<!-- OPEN: BitTorrent peer/tracker traffic (sheet open point 6). Current stance is that this is user-initiated, core-function transfer directly to third parties and is not declared as developer collection or sharing; owner still to confirm against Play's wording. This section is the main disclosure. -->
 
 <h2>Crash reports and anonymous usage (Firebase)</h2>
 <p>To fix crashes and see which features matter, Tide uses Google Firebase Crashlytics and Firebase Analytics. Google acts as our processor. This is <strong>on by default</strong>, starts when you first open a release build, and you can turn it off at any time with one switch: <em>Settings &gt; Privacy &gt; Send crash reports and usage statistics</em>. The switch controls both services. It is always off in debug builds.</p>

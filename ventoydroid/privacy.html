@@ -37,7 +37,6 @@
 
 <h2>Send log</h2>
 <p>In the Play version, About has a <em>Send log</em> button. Only when you tap it, the app attaches its own last 400 log lines and uploads them once to Firebase Crashlytics, together with any crash kept on the phone. The app replaces <code>content://</code> and <code>file://</code> addresses in the log, but nothing else is removed, so the log <strong>can include file and drive names</strong>. Do not tap it if you do not want that. This works even when the usage switch is off.</p>
-<!-- OPEN: Send log / Files and docs (sheet section 2, fifth row, and open point 3). Sheet recommends declaring Files and docs (collected, not shared, optional) in Play Data safety; owner to confirm. The log contents were not fully audited, so the page says the log "can include file and drive names", matching the in-app helper text. Keep policy, form and in-app text identical. -->
 <p><strong>Limit:</strong> if the app crashes with an unexpected error while reports are on, the error text written by the system or a library is sent as it is, and in rare cases it could include a drive label or a file name. We filter what the app itself reports, but we cannot filter text produced inside the crash.</p>
 <p>Data is encrypted in transit. It is kept by Firebase under Google's default retention. See <a href="https://firebase.google.com/support/privacy">Firebase privacy information</a> and the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>
 
