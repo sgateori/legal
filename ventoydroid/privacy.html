@@ -22,7 +22,6 @@
 
 <h2>Crash reports and anonymous usage (Firebase)</h2>
 <p>To fix crashes and see how installs go, the Play version includes Google Firebase Crashlytics and Firebase Analytics. Google acts as our processor. This is <strong>off by default</strong>. Nothing is uploaded until you turn on <em>Send crash and usage reports</em> in About. Turning it off stops both services and also deletes crashes that were recorded but not yet sent. It is always off in debug builds.</p>
-<!-- OPEN: Opt-in vs first-run prompt (sheet open point 1). The code is true opt-in (default off, no first-run prompt); the page says so. Owner may add a first-run prompt later; no change needed otherwise. -->
 <p>Two details: crashes recorded while the switch was off are uploaded when you turn it on, and the <em>Send log</em> button (below) works even with the switch off, and when tapped it also releases any crash kept on the phone.</p>
 <p>When the switch is on, VentoyDroid itself sends:</p>
 <table>
@@ -32,8 +31,7 @@
 <tr><td>Usage events: a USB stick attached (a brand group from a fixed list, or "other", and a size range such as 16-32 GB); an install step (detect, partition, write or verify; success; error class such as permission, OTG, I/O, size or unsupported); install finished (success, a duration range, and a phone-maker group); and restore used (success)</td><td>See what works and what fails</td></tr>
 </table>
 <p>VentoyDroid does not deliberately send drive serial numbers, volume labels, ISO or file names or contents, file addresses, location or accounts in these events or crash keys.</p>
-<p>The Firebase libraries also collect some standard data on their own: device model, operating system and app version, language, general events such as first open, sessions and screen views, and random per-install identifiers (the Firebase app-instance ID and the Crashlytics installation ID). Google derives an approximate country or region from your IP address when the data arrives. These identifiers are not your advertising ID. VentoyDroid does not use the advertising ID, and its AD_ID permission is removed.</p>
-<!-- OPEN: Advertising-related permissions (sheet open point 2). The merged app still carries the ACCESS_ADSERVICES_AD_ID, ACCESS_ADSERVICES_ATTRIBUTION and install-referrer permissions from Firebase Analytics; only AD_ID is removed. The sentence above says only what is verified (AD_ID removed, advertising ID not used). Revisit if the app is changed to remove the other permissions. -->
+<p>The Firebase libraries also collect some standard data on their own: device model, operating system and app version, language, general events such as first open, sessions and screen views, and random per-install identifiers (the Firebase app-instance ID and the Crashlytics installation ID). Google derives an approximate country or region from your IP address when the data arrives. These identifiers are not your advertising ID. VentoyDroid does not use the advertising ID, and its advertising-ID, ad-services and install-referrer permissions are removed.</p>
 
 <h2>Send log</h2>
 <p>In the Play version, About has a <em>Send log</em> button. Only when you tap it, the app attaches its own last 400 log lines and uploads them once to Firebase Crashlytics, together with any crash kept on the phone. The app replaces <code>content://</code> and <code>file://</code> addresses in the log, but nothing else is removed, so the log <strong>can include file and drive names</strong>. Do not tap it if you do not want that. This works even when the usage switch is off.</p>
