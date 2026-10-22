@@ -21,7 +21,6 @@
 
 <h2>Crash reports and usage statistics (Firebase)</h2>
 <p>The app uses Google Firebase Crashlytics and Firebase Analytics to find crashes and see which features are used. Firebase acts as our service provider and processes this data on our behalf; we do not sell it or use it for advertising.</p>
-<!-- OPEN: "Shared" in the Data safety form: sheet proposes Shared = No (Firebase as service provider); conservative alternative is Shared = Yes (analytics). Owner to choose; wording above must match. -->
 <p><strong>This is on by default.</strong> The app does not ask before it starts: collection begins when you first open the app. You can turn it off at any time with one switch, <em>Share crash reports and usage statistics</em>, in Settings. It covers both services. Collection is never active in debug builds.</p>
 <!-- OPEN: Default ON with no first-run prompt (opt-out). Sheet open point 1: owner may change the app to default-off / first-run prompt, or answer "required" in the form. Keep this paragraph in step with that decision. -->
 <table>
@@ -33,9 +32,7 @@
 </table>
 <p>The code does not send file names, folder names, paths, tags, cover art, audio, or exact sizes and times (ranges only). Input formats are recognised from the file extension against a fixed list, otherwise reported as "other".</p>
 <p><strong>Limit:</strong> if the app crashes with an unexpected error, the error text produced by Android or a library is sent as it is. The app does not filter it, and in rare cases such text could include a file name or path. We therefore say the app does not deliberately send file names or paths, not that it never can.</p>
-<!-- OPEN: Uncaught crash text is not redacted (sheet open point 2). Owner may add redaction in a later build; until then keep "does not deliberately send" wording. -->
 <p>Google also derives an approximate country or region from your IP address when Analytics data arrives. The app never reads your location and has no location permission.</p>
-<!-- OPEN: Approximate location via Analytics IP (sheet open point 4): currently not declared in the Data safety form; if Firebase's Play disclosure guidance lists it, the form and this sentence must be aligned. -->
 <p>See <a href="https://firebase.google.com/support/privacy">Firebase privacy information</a> and the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>. Data is encrypted in transit.</p>
 
 <h2>Local crash log and email report</h2>
@@ -49,7 +46,6 @@
 
 <h2>Your choices and deletion</h2>
 <p>Use the Settings switch to stop collection at any time. Uninstalling removes local data. We have no account system, so we cannot look up data by name. To ask us to delete reports from your install, email us the Firebase installation identifier or a description of when a crash happened, and we will delete what we can match.</p>
-<!-- OPEN: Deletion request offered "by email" is the sheet's proposal (Data safety: "Proposed: Yes"), not yet confirmed by the owner. Older DATA-SAFETY-NOTES said "not offered". Policy and form must say the same. -->
 
 <h2>Children</h2>
 <p>Audio Converter is not directed at children.</p>

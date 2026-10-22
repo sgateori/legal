@@ -20,7 +20,6 @@
 
 <h2>Crash reports and usage statistics (Firebase)</h2>
 <p>The only network use is Google Firebase Crashlytics and Firebase Analytics. Firebase acts as our service provider and processes this data on our behalf; we do not sell it or use it for advertising.</p>
-<!-- OPEN: "Shared" in the Data safety form: sheet proposes Shared = No (Firebase as service provider); conservative alternative is Shared = Yes (analytics). Owner to choose; wording above must match. -->
 <p><strong>This is on by default and the app does not ask first.</strong> There is one switch, <em>Share crash reports and usage statistics</em>, in Settings. Collection starts when you first open the app, before you can see the switch, and you can turn it off at any time; it covers both services. It is never active in debug builds. The library screen's permission hint also tells you crash reports are sent and can be switched off. We do not claim that your consent is requested.</p>
 <!-- OPEN: Default ON with no first-run prompt (opt-out). Sheet open point 1: owner may change the app to default-off / first-run prompt, or answer "required" in the form. Keep this paragraph in step with that decision. -->
 <table>
@@ -32,9 +31,7 @@
 </table>
 <p>The app does not deliberately send track titles, artists, albums, file names or paths, playlist names, lyrics or album art.</p>
 <p><strong>Limit:</strong> if the app crashes with an unexpected error, the error text produced by Android or a library is sent as it is. The app does not filter it, and in rare cases such text could include a file name or path.</p>
-<!-- OPEN: Uncaught crash text is not redacted; no Redact class (sheet open point 2). Keep "does not deliberately send" wording until the app redacts. -->
 <p>Google also derives an approximate country or region from your IP address when Analytics data arrives. The app never reads your location and has no location permission.</p>
-<!-- OPEN: Approximate location via Analytics IP (sheet open point 4): currently not declared in the Data safety form; align form and this sentence if Firebase's Play disclosure guidance lists it. -->
 <p>Data is encrypted in transit. See <a href="https://firebase.google.com/support/privacy">Firebase privacy information</a> and the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>
 
 <h2>What we do not collect</h2>
@@ -46,7 +43,6 @@
 
 <h2>Your choices and deletion</h2>
 <p>Turn the Settings switch off at any time. Uninstalling removes local data. Data in Firebase is tied to a random installation ID, not to your identity, so we can only locate it if you send us that ID. To ask us to delete data tied to your installation, email us the ID and we will delete what we can match.</p>
-<!-- OPEN: Deletion request offered "by email" is the sheet's proposal (Data safety: "Proposed: Yes"), not yet confirmed by the owner (sheet open point 8). Policy and form must say the same. -->
 
 <h2>Children</h2>
 <p>Simple Music is not directed at children.</p>

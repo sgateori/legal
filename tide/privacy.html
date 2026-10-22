@@ -38,9 +38,7 @@
 </table>
 <p>Tide does not deliberately send torrent names, magnet links, info-hashes, tracker addresses, peer addresses, file names, file or folder paths, rate limits or search text (Tide has no search). Note that Crashlytics receives exact torrent counts, and the session statistics include ranges of peer counts.</p>
 <p>The Firebase libraries also collect some standard data on their own: device model, operating system and app version, language, general events such as first open and sessions, and random per-install identifiers (the Firebase app-instance ID and the Crashlytics installation ID). Google derives an approximate location (country or city level) from your IP address when the data arrives. Tide itself never reads your location and has no location permission. These identifiers are not your advertising ID. Tide does not use the advertising ID, and its advertising-related permissions are removed from the app.</p>
-<!-- OPEN: Approximate location via Analytics IP (sheet open point 4). Policy keeps the sentence disclosing IP-derived approximate location; whether the Play Data safety form should tick Location > Approximate location is an open owner decision (ticking is the safer error). -->
 <p><strong>Limit:</strong> if the app crashes with an unexpected error, the error text written by the system or a library is sent as it is, and native (libtorrent) crashes carry native stack frames and addresses. In rare cases such text could include part of a path or a name. We filter what the app itself reports, but we cannot filter text produced inside the crash.</p>
-<!-- OPEN: Uncaught crash text is not redacted (sheet open point 3). Wording says "does not deliberately send" with this stated exception; narrow it if a redaction step is added later. -->
 <p>Data is encrypted in transit. It is kept by Firebase under Google's default retention. See <a href="https://firebase.google.com/support/privacy">Firebase privacy information</a> and the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>
 
 <h2>What we do not collect</h2>
@@ -51,7 +49,6 @@
 
 <h2>Your choices and deleting data</h2>
 <p>Use the switch above to stop crash and usage collection at any time. You can also turn off DHT and Local Peer Discovery in Settings. We have no account system, so we cannot look up your data by name. To ask us to delete reports from your install, email us the installation identifier or a description of when the crash happened, and we will delete what we can match. Uninstalling removes all local data.</p>
-<!-- OPEN: Deletion request (sheet section 1 / open point 9). The sheet's answer is "Yes, by email to sgateori@proton.me"; owner to confirm, and keep the Play Data safety answer worded identically. -->
 
 <h2>Children</h2>
 <p>Tide is a general-purpose tool and is not directed at children.</p>
