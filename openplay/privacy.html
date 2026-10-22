@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenPlay Privacy Policy</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<nav><a href="../">All apps</a></nav>
+<h1>OpenPlay Privacy Policy</h1>
+<p class="meta"><strong>App:</strong> OpenPlay (<code>com.sgateori.openplayer</code>) &middot; <strong>Developer:</strong> sgateori &middot; <strong>Last updated:</strong> 2026-10-23</p>
+<!-- OPEN: Crash reports include exception messages as produced by Android or libraries. The code does not filter them, so a message could in rare cases contain a web address (Podcatch's page states this limit). Owner to decide whether to add the same sentence here; not verified in code. -->
+<!-- OPEN: ACCESS_ADSERVICES_AD_ID and ACCESS_ADSERVICES_ATTRIBUTION are removed in the manifest, but apps/openplay/DATA-SAFETY-NOTES.md still says the owner has not decided on the first one. The page says no advertising ID is used, matching the manifest; owner to confirm the notes are superseded. -->
+
+<p>OpenPlay is a media player. It plays video and audio files on your device and streams from web addresses or network shares (SMB) that you enter yourself. The app has no account, no sign-in, no ads and no in-app purchases, and the developer runs no server for it.</p>
+
+<h2>What stays on your device</h2>
+<p>Your media files, their names, folders and paths, the stream addresses you open and your playback activity are never sent to the developer or to Firebase. The app reads your media only to list it and play it. Settings, resume positions, folder grants and your saved SMB server list are kept in the app's private storage. Android backup is turned off for the app, so this data is not copied to your Google account, and uninstalling the app removes it.</p>
+
+<h2>Crash reports and usage statistics (Firebase)</h2>
+<p>The app uses Google Firebase Crashlytics and Firebase Analytics. Firebase acts as our service provider; we do not sell this data or use it for advertising.</p>
+<p><strong>This is on by default.</strong> A single switch, <em>Share crash reports and usage statistics</em> (library menu &gt; Privacy), turns both Crashlytics and Analytics off, and takes effect right away. It is never active in debug builds.</p>
+<table>
+<tr><th>Data</th><th>Purpose</th></tr>
+<tr><td>Crash reports and handled playback errors: stack trace, exception message, and the state of the app at that moment (screen name, build type, whether installed from Google Play or sideloaded, language, network type such as Wi-Fi or mobile, never the network name)</td><td>Fix bugs</td></tr>
+<tr><td>Usage events: <code>play_start</code> (kind of source: local file, folder, HLS, HTTP or SMB; container and codec type such as <code>mp4</code> or <code>avc</code>), <code>playback_error</code> (source kind, error class, codec) and <code>feature_used</code> (picture-in-picture, equalizer, network stream, playlist), plus events Firebase records itself (app open, screen view, session)</td><td>See which features are used and which formats fail</td></tr>
+<tr><td>Identifiers and device details Firebase creates or reads: a random app-instance and installation ID, phone model, Android version and app version. This is not your advertising ID.</td><td>Group crashes, count installs</td></tr>
+</table>
+<p>The source kind in these events comes from the type of address (for example, <code>smb</code>), never from the address itself. The app does not send file names, paths, stream addresses, server or share names, or your media to Firebase.</p>
+<p>Google also derives an approximate country or region from your IP address when data arrives. The app never reads your location and has no location permission.</p>
+<p>Data is encrypted in transit. See <a href="https://firebase.google.com/support/privacy">Firebase privacy information</a> and the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>
+
+<h2>Other network connections (not sent to the developer)</h2>
+<ul>
+<li><strong>Streams:</strong> when you open a stream, the app connects directly to the address you entered. That server can see your IP address and normal request details, as with a browser. Plain <code>http://</code> is allowed so home-network streams work; such connections are not encrypted.</li>
+<li><strong>SMB shares:</strong> the app connects directly from your phone to the server you typed, with the user name and password you entered. The server address, share name and user name are saved on your device so the share stays in your list. <strong>The password is never saved</strong>; it is kept in memory only and forgotten when the app closes. Nothing is routed through the developer.</li>
+</ul>
+
+<h2>Permissions</h2>
+<p>Video and audio file access (<code>READ_MEDIA_VIDEO</code>, <code>READ_MEDIA_AUDIO</code>, and <code>READ_EXTERNAL_STORAGE</code> on Android 12 and older) to build your library; internet and network state for streams, shares and the Firebase reports above; notifications and a media-playback foreground service for background playback controls; wake lock to keep playback going with the screen off; audio settings for the equalizer and volume boost. Files and folders you pick with the system pickers (including SD card or USB folders) stay under your control and Android keeps the grant until you revoke it. The app has no location, contacts, camera, microphone or SMS access.</p>
+
+<h2>What we do not collect</h2>
+<p>Your advertising ID (the AD_ID permission is removed from the app), media files, file names, folder structure, stream addresses, SMB credentials, location, contacts, or personal information such as name, email or phone number.</p>
+
+<h2>Your choices and deletion</h2>
+<p>Turn the switch off in the library menu &gt; Privacy at any time. Uninstalling removes local data. Data in Firebase is tied to a random installation ID, not to your identity, so we can only locate it if you send us that ID. To ask us to delete data tied to your installation, email us and we will delete what we can match.</p>
+
+<h2>Children</h2>
+<p>OpenPlay is not directed at children.</p>
+
+<h2>Changes</h2>
+<p>If this policy changes, the date above changes and the new version replaces this page.</p>
+
+<h2>Contact</h2>
+<p>sgateori@proton.me</p>
+</body>
+</html>
