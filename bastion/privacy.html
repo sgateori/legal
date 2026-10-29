@@ -9,7 +9,7 @@
 <body>
 <nav><a href="../">All apps</a></nav>
 <h1>Bastion Privacy Policy</h1>
-<p class="meta"><strong>App:</strong> Bastion (<code>sh.bastion.app</code>) &middot; <strong>Developer:</strong> sgateori &middot; <strong>Last updated:</strong> 2026-10-22</p>
+<p class="meta"><strong>App:</strong> Bastion (<code>sh.bastion.app</code>) &middot; <strong>Developer:</strong> sgateori &middot; <strong>Last updated:</strong> 2026-10-29</p>
 
 <p>Bastion is a remote-access and terminal app. It connects to servers you choose (SSH, Mosh, VNC, RDP and others), can run Linux guests on your phone, and has an optional local endpoint that lets an AI agent you pair with control the app. It has no accounts, shows no ads and sells no data. This page says what is stored on your device and what leaves it.</p>
 
@@ -46,7 +46,7 @@
 <tr><td>Usage events: connection attempted (protocol and whether the login used a password, key or other); connection result (protocol, success, error class such as timeout, auth, host key, TLS, DNS or refused, and a duration range); session end (protocol, duration range, and whether you ended it, it dropped or it failed); feature used (SFTP, port forwarding, email, rclone sync or Linux guest); host-key prompt outcome (accepted or rejected); and which agent tool was called with only whether it succeeded</td><td>See what works and what fails</td></tr>
 </table>
 <p>Bastion does not deliberately send host names, ports, user names, key names, passwords, file contents, agent-tool arguments or results, clipboard or terminal contents, network names or IP addresses in these events or in the crash keys. The agent-tool name is sent only when it is one of the app's own registered tools.</p>
-<p>The Firebase libraries also collect some standard data on their own: device model, operating system and app version, general events such as app opens and sessions, random per-install identifiers (the Firebase app-instance ID and the Crashlytics installation ID), and Google derives an approximate country or region from your IP address when the data arrives. These identifiers are not your advertising ID. Bastion does not use the advertising ID and its advertising-ID permission is removed from the app.</p>
+<p>The Firebase libraries also collect some standard data on their own: device model, operating system and app version, general events such as app opens and sessions, random per-install identifiers (the Firebase app-instance ID and the Crashlytics installation ID), and Google derives an approximate country or region from your IP address when the data arrives. These identifiers are not your advertising ID. Bastion does not use the advertising ID and its advertising-ID and ad-services (attribution) permissions are removed from the app.</p>
 <p><strong>Limit:</strong> Bastion has no crash handler of its own for uncaught crashes, so when the app crashes with an unexpected error, the error text written by the system or a library is sent as it is. Such text can include a host name or user name, for example from a connection failure. Native (signal) crashes are not uploaded; they are only recorded on your device.</p>
 <p>Data is encrypted in transit. It is kept by Firebase under Google's default retention. See <a href="https://firebase.google.com/support/privacy">Firebase privacy information</a> and the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>
 
@@ -60,7 +60,7 @@
 <p>Use the switch above to stop crash and usage collection at any time. Pairing, the agent endpoint and each agent capability can be turned off in Settings. We have no account system, so we cannot look up your data by name. To ask us to delete reports from your install, email us the installation identifier or a description of when the crash happened, and we will delete what we can match. Uninstalling removes all local data.</p>
 
 <h2>Children</h2>
-<p>Bastion is a general-purpose tool and is not directed at children.</p>
+<p>Bastion is intended for people aged 13 and over and is not directed at children under 13. We do not knowingly collect personal information from children under 13; if you believe a child has sent us data, email us and we will delete what we can match.</p>
 
 <h2>Changes</h2>
 <p>If this changes, the date above changes and the app update notes will say so.</p>

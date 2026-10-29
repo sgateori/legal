@@ -9,7 +9,7 @@
 <body>
 <nav><a href="../">All apps</a></nav>
 <h1>NetShare Privacy Policy</h1>
-<p class="meta"><strong>App:</strong> NetShare (<code>au.event.netshare</code>) &middot; <strong>Developer:</strong> sgateori &middot; <strong>Last updated:</strong> 2026-10-22</p>
+<p class="meta"><strong>App:</strong> NetShare (<code>au.event.netshare</code>) &middot; <strong>Developer:</strong> sgateori &middot; <strong>Last updated:</strong> 2026-10-29</p>
 
 <p>NetShare runs the open-source copyparty file server on your phone and lets you send files to other people with a link. The files are served from your phone. There is no NetShare server, no NetShare account and no ads. The developer does not receive, store or see the files you share. This page says what stays on your phone, what leaves it, and who can see it.</p>
 
@@ -29,7 +29,7 @@
 </ul>
 
 <h2>Security scan</h2>
-<p>The Scan tab checks your setup. It runs automatically the first time sharing starts and again after some other actions, and when you tap Scan. This does not depend on your crash-report choice below. It sends the names and versions of the libraries bundled in the app to the OSV vulnerability database (<code>api.osv.dev</code>) to look up known issues. No personal data and no files are sent, but OSV sees your phone's IP address like any web server would. It also requests your own public share address (user agent <code>NetShare-selfprobe</code>) to test whether your server can be reached from outside. Shared files are also checked for secrets, on the phone only.</p>
+<p>The Safety tab checks your setup. It runs automatically the first time sharing starts and again after some other actions, and when you tap Scan. This does not depend on your crash-report choice below. To look up known vulnerabilities, it sends the package ecosystem (for example Maven or Go), the name and the version of each library bundled in the app to the OSV vulnerability database (<code>api.osv.dev</code>, run by the open-source OSV project) over HTTPS, then fetches the details of any issue found. The request uses the user agent <code>NetShare-security-scan</code>. No files, share links, recipient names, account details or device identifiers are sent, and the list is the same for every installation of the same version. OSV, like any web server, sees your phone's IP address and the time of the request; we do not receive this data. It also requests your own public share address (user agent <code>NetShare-selfprobe</code>) to test whether your server can be reached from outside. Shared files are also checked for secrets, on the phone only.</p>
 
 <h2>Crash reports and anonymous usage (Firebase)</h2>
 <p>This is <strong>off by default</strong>. On first launch the app asks &quot;Help improve NetShare?&quot; and you must choose Allow or No thanks. Nothing is sent until you choose Allow. You can change your choice at any time in Settings, Privacy. If you decline or switch it off, queued crash reports are deleted. Collection is also always off in debug builds.</p>
@@ -52,7 +52,7 @@
 <h2>Your choices and deleting data</h2>
 <p>Turn crash reports and usage statistics off at any time in Settings, Privacy. Revoke a link or change its expiry. Stop the server to stop serving. Choose LAN only to avoid third parties. Delete data on your phone in the app or by uninstalling. We have no account system and no file data, so we cannot look up your data by name. To ask us to delete reports tied to your Firebase installation ID, email us that ID or a description of when a crash happened, and we will delete what we can match.</p>
 <h2>Children</h2>
-<p>NetShare is a general-purpose tool and is not directed at children.</p>
+<p>NetShare is intended for people aged 13 and over and is not directed at children under 13. We do not knowingly collect personal information from children under 13; if you believe a child has sent us data, email us and we will delete what we can match.</p>
 
 <h2>Changes</h2>
 <p>If this changes, the date above changes and the app update notes will say so.</p>
